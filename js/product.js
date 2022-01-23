@@ -43,9 +43,8 @@ const app = createApp({
       const url = `${this.apiUrl}/api/${this.apiPath}/admin/product/${id}`;
       axios.delete(url)
         .then((res) => {
-          const index = this.products.findIndex(obj => obj.id === item.id);
-          this.products.splice(index, 1);
           alert('刪除成功');
+          this.getData();
         })
         .catch((err) => {
           console.dir(err);
